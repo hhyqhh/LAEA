@@ -1,0 +1,9 @@
+README.md
+setup.py
+algorithm/__init__.py
+autosyn.egg-info/PKG-INFO
+autosyn.egg-info/SOURCES.txt
+autosyn.egg-info/dependency_links.txt
+autosyn.egg-info/top_level.txt
+problem/__init__.py
+problem/lzg.py

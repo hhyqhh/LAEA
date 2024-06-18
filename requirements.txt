@@ -1,0 +1,8 @@
+matplotlib==3.9.0
+numpy==1.26.4
+pymoo==0.6.1.1
+scikit-learn==1.5.0
+tqdm==4.66.4
+tiktoken==0.7.0
+ollama==0.1.8
+openai==1.10.0

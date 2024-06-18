@@ -1,0 +1,31 @@
+prompt_template:
+  reg_introduction: "Your task is to predict the numerical value of each object based on its attributes. These attributes and their corresponding values are outcomes of a black box function's operation within its decision space. The target value for each object is determined by a specific mapping from these attributes through the black box function. Your objective is to infer the underlying relationships and patterns within the black box function using the provided historical data. This task goes beyond simple statistical analyses, such as calculating means or variances, and requires understanding the complex interactions between the attributes. Please do not attempt to fit the function using code similar to Python; instead, directly learn and infer the numerical values.\n\nProcedure:\n1. Analyze the historical data to uncover how attributes relate to the numerical values.\n2. Use these insights to predict the numerical value for new objects based on their attributes.\n3. Respond using JSON format, e.g. {'Value':'approximation result'}\n\nHistorical Examples:\n"
+  cla_introduction: "You are tasked with evaluating each object based on its numerical attributes to determine its category as 'better' or 'worse'. These attributes derive from a black box function's decision space, with the assessment of the label based on the post-mapping function values. Your role involves discderning the internal variable relationships of the black box function from provided historical data, moving beyond mere statistical analyses like calculating means and variances.\n\nProcedure:\n1. Identify patterns in how attributes are categorized.\n2. Apply these patterns to assess new objects, determining whether its category is better or worse.\n3. Respond using JSON format, e.g. {'Class':'result'}\n\nHistorical Examples:\n"
+
+infer_config:
+  backend: 'ollama'                 # 'ollama' or 'vllm' or 'openai'
+  parallel: False                   # True or False
+  num_processes: 20                  # Number of processes to run in parallel
+  max_retries: 3                    # Number of retries for the API call  
+  beta: 3
+  show_prompt: False
+  show_response: False
+  show_progress: True  
+  show_token_size: False   
+
+
+ollama:
+  url: http://localhost:11434   
+  model: 'mixtral:latest'
+
+vllm:
+  url: http://localhost:5803
+  api_key: EMPTY
+  model: 'LLM-Research/Meta-Llama-3-8B-Instruct'
+
+
+openai:
+  url: http://   # OpenAI API URL
+  api_key: sk-xxx # OpenAI API Key
+  model: 'gpt-3.5-turbo'  # OpenAI Model Name
+
